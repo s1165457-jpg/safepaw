@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Friend | SafePaw</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
+    <style>
+        /* 针对领养页的额外修饰，填补空隙 */
+        .glass-container {
+            /* 重点修复：极大地增强文字阴影，使其在亮背景下超级显眼 */
+            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 0 20px;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            background: rgba(244, 162, 97, 0.1);
+            color: var(--main-color);
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        /* 统一卡片高度 */
+        .update-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .update-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">🐾 SafePaw</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="feed.html">Feed</a>
+      <a href="emotion.html">Emotion</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-actions" style="display:flex; align-items:center; gap:1.5rem;">
+      <a href="login.html" class="login-link" style="text-decoration:none; color:#666; font-weight:600; font-size:0.9rem;">Login</a>
+      <a href="donate.html" class="btn-donate-nav" style="background:var(--accent-color); color:white; padding:10px 25px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem; transition:0.3s;">Donate</a>
+    </div>
+  </nav>
+</header>
+
+<section class="adopt-hero hero" style="min-height: 80vh; background-image: linear-gradient(rgba(244, 162, 97, 0.1), rgba(0, 0, 0, 0.2)), url('images/adopt-hero-bg.jpg'); display: flex; align-items: center; justify-content: center;">
+    <div class="glass-container fade-in visible" style="margin-top: 0; transform: none;">
+        <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 600; color: #fff; margin-bottom: 10px; display: block;">Save a Life Today</span>
+        <h1 style="font-size: 3.5rem; line-height: 1.2;">Find Your Forever Friend</h1>
+        <p style="font-size: 1.2rem; max-width: 650px; margin: 0 auto;">Adopting a stray animal means saving a life. Meet our beautiful souls waiting to join your family.</p>
+        
+        <div style="display: flex; justify-content: center; gap: 40px; margin: 25px 0; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 25px;">
+            <div class="stat-box">
+                <span class="stat-number">150+</span>
+                <span class="stat-label">Adopted</span>
+            </div>
+            <div style="width: 1px; background: rgba(255,255,255,0.2);"></div>
+            <div class="stat-box">
+                <span class="stat-number">42</span>
+                <span class="stat-label">Waiting</span>
+            </div>
+            <div style="width: 1px; background: rgba(255,255,255,0.2);"></div>
+            <div class="stat-box">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Support</span>
+            </div>
+        </div>
+
+        <div style="display:flex; justify-content: center; gap: 15px;">
+            <a href="#friends" class="btn">Meet the Animals</a>
+            <a href="about.html" class="btn-outline" style="border-color:#fff; color:#fff;">Adoption Rules</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-inner fade-in">
+    <h2 style="text-align: center; margin-bottom: 3rem;">How to Adopt</h2>
+    <div class="card-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; max-width: 900px; margin: 0 auto;">
+        
+        <div class="update-card" style="background:#fff; border-radius:30px; padding: 2.5rem; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s;">
+            <div style="font-size: 3rem; margin-bottom: 1rem; color: #E76F51;">1.</div>
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔎</div>
+            <h3>Choose</h3>
+            <p style="color:#666;">Browse our list and find an animal that fits your lifestyle.</p>
+        </div>
+
+        <div class="update-card" style="background:#fff; border-radius:30px; padding: 2.5rem; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s;">
+            <div style="font-size: 3rem; margin-bottom: 1rem; color: #E76F51;">2.</div>
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">✍️</div>
+            <h3>Apply</h3>
+            <p style="color:#666;">Submit a simple application form to tell us about yourself.</p>
+        </div>
+
+        <div class="update-card" style="background:#fff; border-radius:30px; padding: 2.5rem; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s;">
+            <div style="font-size: 3rem; margin-bottom: 1rem; color: #E76F51;">3.</div>
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏡</div>
+            <h3>Home Visit</h3>
+            <p style="color:#666;">We'll have a brief chat to ensure a safe environment for your new friend.</p>
+        </div>
+
+        <div class="update-card" style="background:#fff; border-radius:30px; padding: 2.5rem; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s;">
+            <div style="font-size: 3rem; margin-bottom: 1rem; color: #E76F51;">4.</div>
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤝</div>
+            <h3>Adopt</h3>
+            <p style="color:#666;">Bring your companion home and start a new chapter of happiness.</p>
+        </div>
+    </div>
+</section>
+
+<section id="friends" class="section-inner fade-in" style="background: white; border-radius: 20px; padding: 4rem; margin-top: 4rem; box-shadow: var(--shadow-sm);">
+    <div style="text-align: center; margin-bottom: 3rem;">
+        <h2>Meet Our Animals</h2>
+        <div style="margin-top: 1rem;">
+            <button class="btn-outline active" style="padding: 5px 20px; font-size: 0.9rem;">All</button>
+            <button class="btn-outline" style="padding: 5px 20px; font-size: 0.9rem;">Dogs</button>
+            <button class="btn-outline" style="padding: 5px 20px; font-size: 0.9rem;">Cats</button>
+        </div>
+    </div>
+
+   <div class="card-grid">
+        <div class="update-card">
+            <div class="img-container">🐶<img src="images/bella.jpg" alt="Bella" onerror="this.style.display='none'"></div>
+            <div style="padding: 1.5rem;">
+                <h3 style="color: #E76F51;">Bella</h3>
+                <span class="tag">Golden Mix</span> <span class="tag">2Y</span>
+                <p style="margin: 10px 0; color: #666; font-size: 0.85rem;">Very gentle and loves playing with children.</p>
+                <a href="apply-adopt.html?pet=Bella" class="btn" style="width:100%; text-align:center;">Adopt Bella</a>
+            </div>
+        </div>
+
+        <div class="update-card">
+            <div class="img-container">🐱<img src="images/luna.jpg" alt="Luna" onerror="this.style.display='none'"></div>
+            <div style="padding: 1.5rem;">
+                <h3 style="color: #E76F51;">Luna</h3>
+                <span class="tag">Tabby Cat</span> <span class="tag">1Y</span>
+                <p style="margin: 10px 0; color: #666; font-size: 0.85rem;">A quiet girl who loves naps and sunshine.</p>
+                <a href="apply-adopt.html?pet=Luna" class="btn" style="width:100%; text-align:center;">Adopt Luna</a>
+            </div>
+        </div>
+
+        <div class="update-card">
+            <div class="img-container">🐕<img src="images/max.jpg" alt="Max" onerror="this.style.display='none'"></div>
+            <div style="padding: 1.5rem;">
+                <h3 style="color: #E76F51;">Max</h3>
+                <span class="tag">Corgi Mix</span> <span class="tag">3Y</span>
+                <p style="margin: 10px 0; color: #666; font-size: 0.85rem;">Energetic and always ready for a walk!</p>
+                <a href="apply-adopt.html?pet=Max" class="btn" style="width:100%; text-align:center;">Adopt Max</a>
+            </div>
+        </div>
+
+        <div class="update-card">
+            <div class="img-container">🐩<img src="images/oliver.jpg" alt="Oliver" onerror="this.style.display='none'"></div>
+            <div style="padding: 1.5rem;">
+                <h3 style="color: #E76F51;">Oliver</h3>
+                <span class="tag">Poodle</span> <span class="tag">5Y</span>
+                <p style="margin: 10px 0; color: #666; font-size: 0.85rem;">Very smart and a loyal companion.</p>
+                <a href="apply-adopt.html?pet=Oliver" class="btn" style="width:100%; text-align:center;">Adopt Oliver</a>
+            </div>
+        </div>
+
+        <div class="update-card">
+            <div class="img-container">🐾<img src="images/daisy.jpg" alt="Daisy" onerror="this.style.display='none'"></div>
+            <div style="padding: 1.5rem;">
+                <h3 style="color: #E76F51;">Daisy</h3>
+                <span class="tag">Beagle Mix</span> <span class="tag">4Y</span>
+                <p style="margin: 10px 0; color: #666; font-size: 0.85rem;">Has a sweet soul and loves snuggling.</p>
+                <a href="apply-adopt.html?pet=Daisy" class="btn" style="width:100%; text-align:center;">Adopt Daisy</a>
+            </div>
+        </div>
+
+        <div class="update-card">
+            <div class="img-container">🦁<img src="images/simba.jpg" alt="Simba" onerror="this.style.display='none'"></div>
+            <div style="padding: 1.5rem;">
+                <h3 style="color: #E76F51;">Simba</h3>
+                <span class="tag">Ginger Cat</span> <span class="tag">6M</span>
+                <p style="margin: 10px 0; color: #666; font-size: 0.85rem;">A brave little hunter who loves toys.</p>
+                <a href="apply-adopt.html?pet=Simba" class="btn" style="width:100%; text-align:center;">Adopt Simba</a>
+            </div>
+        </div>
+
+        <div class="update-card">
+            <div class="img-container">🐶<img src="images/rocky.jpg" alt="Rocky" onerror="this.style.display='none'"></div>
+            <div style="padding: 1.5rem;">
+                <h3 style="color: #E76F51;">Rocky</h3>
+                <span class="tag">Husky Mix</span> <span class="tag">2Y</span>
+                <p style="margin: 10px 0; color: #666; font-size: 0.85rem;">A talkative boy who loves cold weather.</p>
+                <a href="apply-adopt.html?pet=Rocky" class="btn" style="width:100%; text-align:center;">Adopt Rocky</a>
+            </div>
+        </div>
+
+        <div class="update-card">
+            <div class="img-container">🐱<img src="images/coco.jpg" alt="Coco" onerror="this.style.display='none'"></div>
+            <div style="padding: 1.5rem;">
+                <h3 style="color: #E76F51;">Coco</h3>
+                <span class="tag">Siamese</span> <span class="tag">3Y</span>
+                <p style="margin: 10px 0; color: #666; font-size: 0.85rem;">Elegant and very vocal about her needs.</p>
+                <a href="apply-adopt.html?pet=Coco" class="btn" style="width:100%; text-align:center;">Adopt Coco</a>
+            </div>
+        </div>
+
+        <div class="update-card">
+            <div class="img-container">🐕<img src="images/buddy.jpg" alt="Buddy" onerror="this.style.display='none'"></div>
+            <div style="padding: 1.5rem;">
+                <h3 style="color: #E76F51;">Buddy</h3>
+                <span class="tag">Labrador</span> <span class="tag">1Y</span>
+                <p style="margin: 10px 0; color: #666; font-size: 0.85rem;">He will be your most faithful friend ever.</p>
+                <a href="apply-adopt.html?pet=Buddy" class="btn" style="width:100%; text-align:center;">Adopt Buddy</a>
+            </div>
+        </div>
+
+        <div class="update-card">
+            <div class="img-container">🐈<img src="images/mimi.jpg" alt="Mimi" onerror="this.style.display='none'"></div>
+            <div style="padding: 1.5rem;">
+                <h3 style="color: #E76F51;">Mimi</h3>
+                <span class="tag">White Cat</span> <span class="tag">4Y</span>
+                <p style="margin: 10px 0; color: #666; font-size: 0.85rem;">A shy princess waiting for her castle.</p>
+                <a href="apply-adopt.html?pet=Mimi" class="btn" style="width:100%; text-align:center;">Adopt Mimi</a>
+            </div>
+        </div>
+
+        <div class="update-card">
+            <div class="img-container">🐕<img src="images/cooper.jpg" alt="Cooper" onerror="this.style.display='none'"></div>
+            <div style="padding: 1.5rem;">
+                <h3 style="color: #E76F51;">Cooper</h3>
+                <span class="tag">Collie</span> <span class="tag">2Y</span>
+                <p style="margin: 10px 0; color: #666; font-size: 0.85rem;">Super smart, needs lots of mental games!</p>
+                <a href="apply-adopt.html?pet=Cooper" class="btn" style="width:100%; text-align:center;">Adopt Cooper</a>
+            </div>
+        </div>
+
+        <div class="update-card">
+            <div class="img-container">🐱<img src="images/milo.jpg" alt="Milo" onerror="this.style.display='none'"></div>
+            <div style="padding: 1.5rem;">
+                <h3 style="color: #E76F51;">Milo</h3>
+                <span class="tag">Ragdoll</span> <span class="tag">1Y</span>
+                <p style="margin: 10px 0; color: #666; font-size: 0.85rem;">As fluffy as a cloud and twice as soft.</p>
+                <a href="apply-adopt.html?pet=Milo" class="btn" style="width:100%; text-align:center;">Adopt Milo</a>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>© 2026 SafePaw | Together, we make a difference.</p> 
+</footer>
+
+</body>
+</html>

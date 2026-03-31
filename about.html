@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>About Us | SafePaw</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --about-amber: #E9C46A;
+            --about-coral: #E76F51;
+            --soft-bg: #FDFBF9; /* 与 emotion.html 保持一致 */
+        }
+
+        body { background-color: var(--soft-bg); color: #444; margin: 0; }
+
+        /* --- Hero Section --- */
+        .about-hero {
+            min-height: 50vh;
+            background: linear-gradient(135deg, rgba(231,111,81,0.7), rgba(233,196,106,0.5)), 
+                        url('images/image_201917.jpg') no-repeat center center/cover;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+        }
+        .about-hero h1 { font-size: 3.5rem; font-weight: 800; text-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+
+        /* --- 核心数据展示 (新增：救助者、时长、活动) --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: -50px auto 80px;
+            padding: 0 20px;
+        }
+        .stat-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(233, 196, 106, 0.15);
+            border: 1px solid rgba(233, 196, 106, 0.2);
+        }
+        .stat-card h3 { font-size: 2.2rem; color: var(--about-coral); margin-bottom: 5px; }
+        .stat-card p { font-size: 0.85rem; font-weight: 700; color: #888; text-transform: uppercase; }
+
+        /* --- 内容板块 --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .info-row { display: flex; align-items: center; gap: 4rem; margin-bottom: 100px; }
+        .info-row:nth-child(even) { flex-direction: row-reverse; }
+        .info-text { flex: 1; }
+        .info-text h2 { color: var(--about-coral); font-size: 2.5rem; margin-bottom: 20px; }
+        .info-text p { font-size: 1.1rem; line-height: 1.8; color: #666; margin-bottom: 15px; }
+        .info-img { flex: 1; }
+        .info-img img { width: 100%; border-radius: 30px; box-shadow: 20px 20px 0 var(--about-amber); }
+
+        /* --- 联系地址与地图板块 (新增) --- */
+        .contact-section {
+            background: #fff;
+            padding: 80px 0;
+            border-top: 1px solid #eee;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .address-box h2 { color: var(--about-coral); margin-bottom: 25px; }
+        .address-item { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
+        .address-item .icon { font-size: 1.5rem; }
+        .address-item b { display: block; color: #333; margin-bottom: 5px; }
+
+        footer { padding: 40px; text-align: center; color: #888; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .info-row, .contact-grid { flex-direction: column; text-align: center; }
+            .info-row:nth-child(even) { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo">🐾 SafePaw</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="story.html">Story</a>
+            <a href="feed.html">Feed</a>
+            <a href="emotion.html">Emotion</a>
+            <a href="adopt.html">Adopt</a>
+            <a href="volunteer.html">Volunteer</a>
+            <a href="about.html" class="active">About</a>
+        </div>
+        <div class="nav-actions" style="display:flex; align-items:center; gap:1.5rem;">
+            <a href="login.html" style="text-decoration:none; color:#666; font-weight:600;">Login</a>
+            <a href="donate.html" class="btn" style="background:var(--about-amber); color:white; padding:10px 25px; border-radius:50px; text-decoration:none; font-weight:800;">Donate</a>
+        </div>
+    </nav>
+</header>
+
+<section class="about-hero">
+    <h1>Driven by Love, Guided by Science</h1>
+</section>
+
+<div class="stats-grid">
+    <div class="stat-card"><h3>450+</h3><p>Active Rescuers</p></div>
+    <div class="stat-card"><h3>12,400+</h3><p>Service Hours</p></div>
+    <div class="stat-card"><h3>1,200+</h3><p>Lives Saved</p></div>
+    <div class="stat-card"><h3>85</h3><p>Events Yearly</p></div>
+</div>
+
+<div class="container">
+    <div class="info-row">
+        <div class="info-text">
+            <h2>Our Story</h2>
+            <p>SafePaw started as a small group of biologists and animal lovers. Today, we are a global community dedicated to providing stray animals with more than just survival—we provide a path back to belonging.</p>
+            <p>We believe that understanding animal behavior is the key to successful adoption. That's why our volunteers go through rigorous training in animal psychology.</p>
+        </div>
+        <div class="info-img">
+            <img src="images/image_201917.jpg" alt="Team Work">
+        </div>
+    </div>
+</div>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="address-box">
+                <h2>Visit Our Sanctuary</h2>
+                <div class="address-item">
+                    <span class="icon">📍</span>
+                    <span><b>Main Rescue Center</b>128 Amber Trail, Sunnyvale, CA 94087</span>
+                </div>
+                <div class="address-item">
+                    <span class="icon">📞</span>
+                    <span><b>Rescue Hotline</b>+1 (800) SAFE-PAW</span>
+                </div>
+                <div class="address-item">
+                    <span class="icon">✉️</span>
+                    <span><b>Email Us</b>hello@safepaw.org</span>
+                </div>
+                <div class="address-item">
+                    <span class="icon">🕒</span>
+                    <span><b>Visiting Hours</b>Sat - Sun: 10:00 AM - 4:00 PM</span>
+                </div>
+            </div>
+            <div class="map-placeholder">
+                <img src="images/image_b1d6ca.jpg" style="width:100%; border-radius:24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" alt="Our Center">
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 SafePaw | Advocating for those who cannot speak.</p>
+</footer>
+
+</body>
+</html>

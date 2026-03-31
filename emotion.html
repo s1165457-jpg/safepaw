@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>The Science of Animal Sentience | SafePaw</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --primary-accent: #E76F51; /* 温暖的琥珀橙 */
+            --science-navy: #264653;   /* 深邃的科学蓝 */
+            --soft-bg: #FDFBF9;        /* 奶白色背景 */
+            --cat-pink: #FFB5A7;       /* 治愈粉 */
+        }
+
+        .emotion-hero {
+            min-height: 60vh;
+            /* 渐变色：从深橙到暖粉 */
+            background: linear-gradient(135deg, rgba(231,111,81,0.8), rgba(244,162,97,0.6)), 
+                        url('images/emotion-hero-bg.jpg') no-repeat center center/cover;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+        }
+
+        /* 告别灰色！使用有颜色的卡片 */
+        .info-block { padding: 60px 0; }
+        .info-grid { 
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; 
+            padding: 3rem; border-radius: 40px; margin-bottom: 2rem;
+        }
+        .bg-orange { background: #FFF4F2; border-left: 10px solid var(--primary-accent); }
+        .bg-blue { background: #F0F7F9; border-right: 10px solid var(--science-navy); direction: rtl; }
+        .bg-blue .text-content { direction: ltr; }
+        
+        .visual-icon { 
+            font-size: 5rem; background: white; width: 150px; height: 150px; 
+            display: flex; align-items: center; justify-content: center; 
+            border-radius: 50%; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            margin: 0 auto;
+        }
+
+        /* 问卷区：更有质感 */
+        .survey-card {
+            background: white; padding: 50px; border-radius: 40px; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05); max-width: 900px; margin: 0 auto;
+        }
+        .question-box { margin-bottom: 30px; text-align: left; padding: 20px; border-radius: 20px; transition: 0.3s; }
+        .question-box:hover { background: #FFF9F5; }
+        
+        .option-item {
+            display: block; padding: 12px 20px; border: 2px solid #eee; 
+            border-radius: 12px; margin-top: 10px; cursor: pointer; background: white;
+        }
+        input[type="radio"]:checked + span { color: var(--primary-accent); font-weight: bold; }
+
+        #analysis-report {
+            display: none; margin-top: 40px; padding: 40px; border-radius: 30px;
+            background: var(--science-navy); color: white; text-align: left;
+            border-bottom: 8px solid var(--primary-accent);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">🐾 SafePaw</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="feed.html">Feed</a>
+      <a href="emotion.html">Emotion</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-actions" style="display:flex; align-items:center; gap:1.5rem;">
+      <a href="login.html" class="login-link" style="text-decoration:none; color:#666; font-weight:600; font-size:0.9rem;">Login</a>
+      <a href="donate.html" class="btn-donate-nav" style="background:var(--accent-color); color:white; padding:10px 25px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem; transition:0.3s;">Donate</a>
+    </div>
+  </nav>
+</header>
+
+<section class="emotion-hero">
+    <div class="glass-container visible">
+        <h1 style="font-size: 3.5rem; color: white;">The Silent Soul</h1>
+        <p style="font-size: 1.2rem;">Beyond instinct lies a world of complex feelings.</p>
+    </div>
+</section>
+
+<section class="section-inner">
+    <div class="info-grid bg-orange">
+        <div class="text-content">
+            <h3 style="color: var(--primary-accent);">Mirror Neurons: The Link</h3>
+            <p>Science proves animals have <strong>Mirror Neurons</strong>. When you feel sad, their brain fires in the same pattern. They aren't just "watching" you; they are literally feeling a version of your pain. This is the biological basis of true empathy.</p>
+        </div>
+        <div class="visual-icon">🧠</div>
+    </div>
+
+    <div class="info-grid bg-blue">
+        <div class="text-content">
+            <h3 style="color: var(--science-navy);">Oxytocin: The Love Loop</h3>
+            <p>In a famous study, dog-owner pairs who engaged in long mutual gazing showed a massive spike in <strong>Oxytocin</strong> (the bonding hormone). It's the same chemical mechanism that bonds human parents to their infants.</p>
+        </div>
+        <div class="visual-icon">💖</div>
+    </div>
+
+    <div class="info-grid bg-orange" style="background: #FFF9E6; border-color: #E9C46A;">
+        <div class="text-content">
+            <h3 style="color: #6d4c41;">Theory of Mind</h3>
+            <p>Ever notice your pet "pointing" at a toy or a bowl? This is <strong>Referential Communication</strong>. It proves they understand that you have information they don't—a sign of high-level cognitive awareness.</p>
+        </div>
+        <div class="visual-icon">🐾</div>
+    </div>
+</section>
+
+<section class="section-inner" style="background: var(--soft-bg); padding: 100px 0; text-align: center;">
+    <h2 style="margin-bottom: 50px;">Empathy Index Assessment</h2>
+    
+    <div class="survey-card">
+        <div class="question-box">
+            <h4>1. Physiological Sync (Yawning)</h4>
+            <p>Does your pet yawn when they see you yawn?</p>
+            <label class="option-item"><input type="radio" name="q1" value="3"> <span>Yes, frequently.</span></label>
+            <label class="option-item"><input type="radio" name="q1" value="1"> <span>Rarely or never.</span></label>
+        </div>
+
+        <div class="question-box">
+            <h4>2. Social Referencing (Seeking Help)</h4>
+            <p>In a scary situation, do they look at your face to see if you are calm?</p>
+            <label class="option-item"><input type="radio" name="q2" value="3"> <span>Yes, they look for my guidance.</span></label>
+            <label class="option-item"><input type="radio" name="q2" value="1"> <span>No, they just panic or hide.</span></label>
+        </div>
+
+        <div class="question-box">
+            <h4>3. Comforting Behavior</h4>
+            <p>If you pretend to cry, does your pet approach to lick or lean on you?</p>
+            <label class="option-item"><input type="radio" name="q3" value="3"> <span>Immediately.</span></label>
+            <label class="option-item"><input type="radio" name="q3" value="1"> <span>They seem confused or indifferent.</span></label>
+        </div>
+
+        <div class="question-box">
+            <h4>4. Anticipatory Grief</h4>
+            <p>Do they seem depressed or wait by the door when you are gone for a long time?</p>
+            <label class="option-item"><input type="radio" name="q4" value="3"> <span>Yes, they exhibit clear separation bonding.</span></label>
+            <label class="option-item"><input type="radio" name="q4" value="1"> <span>No, they are happy as long as there is food.</span></label>
+        </div>
+
+        <div class="question-box">
+            <h4>5. Shared Joy</h4>
+            <p>Does your pet bring you their favorite toy even when they don't want to play, just to 'show' it to you?</p>
+            <label class="option-item"><input type="radio" name="q5" value="3"> <span>Yes, they love sharing their happiness.</span></label>
+            <label class="option-item"><input type="radio" name="q5" value="1"> <span>No, toys are only for personal play.</span></label>
+        </div>
+
+        <button onclick="analyze()" class="btn" style="width: 100%; padding: 1.5rem; font-size: 1.2rem;">Analyze Our Bond</button>
+
+        <div id="analysis-report">
+            <h3 id="res-title">Analysis Result</h3>
+            <p id="res-text"></p>
+        </div>
+    </div>
+</section>
+
+<script>
+    function analyze() {
+        const q1 = document.querySelector('input[name="q1"]:checked');
+        const q2 = document.querySelector('input[name="q2"]:checked');
+        const q3 = document.querySelector('input[name="q3"]:checked');
+        const q4 = document.querySelector('input[name="q4"]:checked');
+        const q5 = document.querySelector('input[name="q5"]:checked');
+
+        if(!q1 || !q2 || !q3 || !q4 || !q5) {
+            alert("Please answer all 5 questions for a scientific result!");
+            return;
+        }
+
+        const score = parseInt(q1.value) + parseInt(q2.value) + parseInt(q3.value) + parseInt(q4.value) + parseInt(q5.value);
+        const report = document.getElementById('analysis-report');
+        report.style.display = "block";
+
+        if(score >= 13) {
+            document.getElementById('res-title').innerText = "Soul-Level Resonance";
+            document.getElementById('res-text').innerText = "Your pet has a high 'Interspecies Empathy Quotient.' They view you as more than a provider; you are their emotional North Star. This bond is built on complex neurological synchronization.";
+        } else if(score >= 9) {
+            document.getElementById('res-title').innerText = "Healthy Companionship";
+            document.getElementById('res-text').innerText = "You have a secure, functional bond. Your pet is observant and loyal, though they maintain a healthy level of species-specific independence. This is a very stable relationship.";
+        } else {
+            document.getElementById('res-title').innerText = "Instinct-Driven Bond";
+            document.getElementById('res-text').innerText = "Your pet is primarily focused on environmental stability and instinct. While they feel safe with you, their emotional world is more primitive. More shared play-time could deepen your empathy loop!";
+        }
+        report.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+<footer><p>© 2026 SafePaw | Grounding love in science.</p></footer>
+</body>
+</html>

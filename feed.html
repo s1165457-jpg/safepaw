@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Scientific Feeding Encyclopedia | SafePaw</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --protein-red: #E76F51;
+            --veggie-green: #2A9D8F;
+            --case-blue: #457B9D;
+            --danger-bg: #1D3557;
+            --soft-cream: #FDFBF9;
+        }
+
+        .feed-hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, rgba(231,111,81,0.8), rgba(69,123,157,0.6)), 
+                        url('images/feed-hero-bg.jpg') no-repeat center center/cover;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+        }
+
+        /* 案例研究板块样式 */
+        .case-study-section { padding: 80px 0; background: #fff; }
+        .case-card {
+            background: white; border-radius: 30px; overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08); margin-bottom: 3rem;
+            display: grid; grid-template-columns: 350px 1fr;
+        }
+        .case-img { 
+            background: var(--case-blue); display: flex; align-items: center; 
+            justify-content: center; font-size: 5rem; color: white; 
+        }
+        .case-content { padding: 3rem; text-align: left; }
+        .case-tag { 
+            background: var(--case-blue); color: white; padding: 5px 15px; 
+            border-radius: 50px; font-size: 0.8rem; margin-bottom: 1rem; display: inline-block;
+        }
+
+        /* 营养板块卡片 */
+        .nutrition-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+        .nutri-card { 
+            padding: 2.5rem; border-radius: 30px; text-align: left; 
+            display: flex; gap: 1.5rem; align-items: flex-start;
+        }
+        .bg-red { background: #FFF4F2; border: 1px solid #FFD8D0; }
+        .bg-green { background: #F0F9F7; border: 1px solid #D1EBE7; }
+        
+        .food-icon-circle {
+            min-width: 80px; height: 80px; border-radius: 50%; background: white;
+            display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* 结果展示 */
+        #result-display {
+            display: none; margin-top: 30px; padding: 2rem; border-radius: 20px;
+            font-weight: 600; line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">🐾 SafePaw</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="feed.html">Feed</a>
+      <a href="emotion.html">Emotion</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-actions" style="display:flex; align-items:center; gap:1.5rem;">
+      <a href="login.html" class="login-link" style="text-decoration:none; color:#666; font-weight:600; font-size:0.9rem;">Login</a>
+      <a href="donate.html" class="btn-donate-nav" style="background:var(--accent-color); color:white; padding:10px 25px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem; transition:0.3s;">Donate</a>
+    </div>
+  </nav>
+</header>
+
+<section class="feed-hero">
+    <div class="glass-container visible">
+        <h1 style="color: white; font-size: 3.5rem;">The Biology of Feeding</h1>
+        <p style="color: white; font-size: 1.2rem;">Detailed nutrition science and real-world case studies.</p>
+    </div>
+</section>
+
+<section class="section-inner">
+    <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.2rem;">Essential Nutrient Groups</h2>
+        <div style="width: 50px; height: 4px; background: var(--protein-red); margin: 15px auto;"></div>
+    </div>
+
+    <div class="nutrition-grid">
+        <div class="nutri-card bg-red">
+            <div class="food-icon-circle">🍗</div>
+            <div>
+                <h4 style="color: var(--protein-red);">Bio-available Protein</h4>
+                <p style="font-size: 0.9rem; color: #555;">Animals need <strong>Arginine</strong> to process ammonia. A single meal lacking this can cause toxic ammonia buildup in a cat's bloodstream within hours.</p>
+            </div>
+        </div>
+        <div class="nutri-card bg-green">
+            <div class="food-icon-circle">🥦</div>
+            <div>
+                <h4 style="color: var(--veggie-green);">Insoluble Fiber</h4>
+                <p style="font-size: 0.9rem; color: #555;">Vegetables like broccoli and kale contain <strong>Sulforaphane</strong>, which helps detoxify the liver, but should never exceed 10% of total daily intake.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="case-study-section">
+    <div class="section-inner">
+        <h2 style="text-align: center; margin-bottom: 4rem;">Feeding Case Studies</h2>
+
+        <div class="case-card">
+            <div class="case-img" style="background: #D62828;">🍫</div>
+            <div class="case-content">
+                <span class="case-tag">Toxicity Case #01</span>
+                <h3>The Theobromine Crisis</h3>
+                <p><strong>Scenario:</strong> A 10kg dog accidentally ingested a dark chocolate bar.</p>
+                <p style="margin-top: 10px;"><strong>Science:</strong> Chocolate contains <strong>Theobromine</strong>. Humans metabolize it fast, but dogs do it so slowly that it builds up to toxic levels, leading to severe tachycardia (racing heart) and central nervous system failure.</p>
+            </div>
+        </div>
+
+        <div class="case-card">
+            <div class="case-img" style="background: #F4A261;">🧅</div>
+            <div class="case-content">
+                <span class="case-tag">Biochemistry Case #02</span>
+                <h3>Oxidative Damage via Alliums</h3>
+                <p><strong>Scenario:</strong> A cat was fed soup containing hidden onion powder over 3 days.</p>
+                <p style="margin-top: 10px;"><strong>Science:</strong> N-propyl disulfide in onions causes <strong>Heinz Body Anemia</strong>. It literally makes the animal's red blood cells explode from the inside, leading to oxygen deprivation in vital organs.</p>
+            </div>
+        </div>
+
+        <div class="case-card">
+            <div class="case-img" style="background: #2A9D8F;">🐟</div>
+            <div class="case-content">
+                <span class="case-tag">Parasitology Case #03</span>
+                <h3>The Raw Fish Risk</h3>
+                <p><strong>Scenario:</strong> Feeding raw salmon to pets in coastal areas.</p>
+                <p style="margin-top: 10px;"><strong>Science:</strong> Raw fish can carry <strong>Thiaminase</strong>, an enzyme that destroys Vitamin B1. Long-term raw fish diets lead to neurological "Star-Gazing" syndrome where the animal loses control of its neck muscles.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-inner" style="background: var(--soft-cream); padding: 80px 20px; border-radius: 60px; margin-bottom: 80px;">
+    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h2>Safety Database Search</h2>
+        <p style="margin-bottom: 3rem; color: #666;">Select a food to understand the biological impact.</p>
+        
+        <select id="food-select" style="width: 100%; padding: 1.5rem; border-radius: 20px; border: 2px solid #eee; font-size: 1.1rem;" onchange="checkFoodSafe()">
+            <option value="">-- Search Food Item --</option>
+            <option value="safe">Blueberries (Antioxidants)</option>
+            <option value="safe">Cooked Egg (Complete Protein)</option>
+            <option value="danger">Grapes (Renal Failure Risk)</option>
+            <option value="danger">Avocado (Persin Toxicity)</option>
+            <option value="caution">Cheese (Lactose Issues)</option>
+        </select>
+
+        <div id="result-display">
+            <h3 id="res-title"></h3>
+            <p id="res-text"></p>
+        </div>
+    </div>
+</section>
+
+<footer><p>© 2026 SafePaw | Grounding compassion in biological truth.</p></footer>
+
+<script>
+    function checkFoodSafe() {
+        const val = document.getElementById('food-select').value;
+        const display = document.getElementById('result-display');
+        const title = document.getElementById('res-title');
+        const text = document.getElementById('res-text');
+
+        if (!val) { display.style.display = "none"; return; }
+
+        display.style.display = "block";
+
+        if (val === 'safe') {
+            display.style.background = "#E9F5F3";
+            display.style.color = "#2A9D8F";
+            title.textContent = "✅ VERDICT: SAFE";
+            text.textContent = "High biological value. Rich in essential micronutrients that support cellular health.";
+        } else if (val === 'danger') {
+            display.style.background = "#FEEBEB";
+            display.style.color = "#D62828";
+            title.textContent = "❌ VERDICT: TOXIC";
+            text.textContent = "Contains biological compounds that trigger acute systemic failure. Do not feed under any circumstances.";
+        } else {
+            display.style.background = "#FFF9E6";
+            display.style.color = "#E9C46A";
+            title.textContent = "⚠️ VERDICT: CAUTION";
+            text.textContent = "May cause gastrointestinal inflammation. Monitor for signs of intolerance (lethargy, vomiting).";
+        }
+        display.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>
+
+</body>
+</html>
