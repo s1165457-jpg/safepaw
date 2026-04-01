@@ -105,6 +105,33 @@
     }
   </style>
 </head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    const user = sessionStorage.getItem('userName');
+    
+    // 自动抓取登录/捐赠按钮
+    const loginBtn = document.querySelector('.btn-login') || document.querySelector('.btn-donate-nav');
+
+    if (isLoggedIn === 'true' && loginBtn) {
+        loginBtn.innerHTML = `Hi, ${user}`;
+        loginBtn.href = "#";
+        
+        // 应用我们新写的暖黄色类名
+        loginBtn.className = 'user-logged-in'; 
+        
+        loginBtn.onclick = function(e) {
+            e.preventDefault();
+            if (confirm("🐾 Logout from SafePaw?")) {
+                sessionStorage.clear();
+                window.location.href = "index.html";
+            }
+        };
+    }
+});
+</script>
+
 <body>
 
 <header>
@@ -120,7 +147,7 @@
       <a href="about.html">About</a>
     </div>
     <div class="nav-actions" style="display:flex; align-items:center; gap:1.5rem;">
-      <a href="login.html" class="login-link" style="text-decoration:none; color:#666; font-weight:600; font-size:0.9rem;">Login</a>
+      <a href="login.html" class="btn-login" style="text-decoration:none; color:#666; font-weight:600; font-size:0.9rem;">Login</a>
       <a href="donate.html" class="btn-donate-nav" style="background:var(--accent-color); color:white; padding:10px 25px; border-radius:50px; text-decoration:none; font-weight:800; font-size:0.9rem; transition:0.3s;">Donate</a>
     </div>
   </nav>

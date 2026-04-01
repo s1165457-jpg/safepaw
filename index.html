@@ -90,7 +90,54 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
         .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     </style>
+
 </head>
+
+<script>
+    window.onload = function() {
+        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+        const user = sessionStorage.getItem('currentUser');
+        
+        // 找到导航栏里的“Login”链接（假设你的链接文字是 Login）
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            if (link.innerText.includes('Login') && isLoggedIn === 'true') {
+                link.innerText = `Hi, ${user} | Logout`;
+                link.href = "#";
+                link.onclick = function() {
+                    sessionStorage.clear(); // 退出登录
+                    location.reload();
+                };
+            }
+        });
+    };
+</script>
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    const user = sessionStorage.getItem('userName');
+    
+    // 自动抓取登录/捐赠按钮
+    const loginBtn = document.querySelector('.btn-login') || document.querySelector('.btn-donate-nav');
+
+    if (isLoggedIn === 'true' && loginBtn) {
+        loginBtn.innerHTML = `Hi, ${user}`;
+        loginBtn.href = "#";
+        
+        // 应用我们新写的暖黄色类名
+        loginBtn.className = 'user-logged-in'; 
+        
+        loginBtn.onclick = function(e) {
+            e.preventDefault();
+            if (confirm("🐾 Logout from SafePaw?")) {
+                sessionStorage.clear();
+                window.location.href = "index.html";
+            }
+        };
+    }
+});
+</script>
+
 <body>
 
 <header>
@@ -106,7 +153,7 @@
             <a href="about.html">About</a>
         </div>
         <div class="nav-right">
-            <a href="login.html" class="login-link">Login / Register</a>
+            <a href="login.html" class="btn-login">Login / Register</a>
             <a href="donate.html" class="btn-donate-nav">Donate</a>
         </div>
     </nav>
@@ -117,6 +164,37 @@
         <h1 style="font-size: 4.5rem; margin: 0 0 10px 0;">From Street to Home</h1>
         <p style="font-size: 1.4rem; opacity: 0.9; margin-bottom: 40px;">Empowering stray lives through scientific nutrition and emotional connection.</p>
         <a href="adopt.html" style="background: #fff; color: var(--protein-red); padding: 1.2rem 3rem; border-radius: 50px; font-weight: 800; text-decoration: none; display: inline-block;">Find A Friend 🐶</a>
+    </div>
+</section>
+
+<section class="mission-section">
+    <div class="container">
+        <span style="color: #E9C46A; font-weight: bold; text-transform: uppercase;">Who We Are</span>
+        <h2>Small Paws, Big Dreams</h2>
+        <p>
+            SafePaw isn't just a shelter; it's a transition home where broken spirits are mended. 
+            Every year, thousands of animals wander the streets of our city. Our mission is to provide 
+            them with not just food and medical care, but a second chance at life through community education 
+            and dedicated adoption programs.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div style="font-size: 2.5rem;">🏥</div>
+                <h3>Medical Aid</h3>
+                <p>From emergency surgeries to routine vaccinations, we ensure every furry friend is healthy.</p>
+            </div>
+            <div class="feature-card">
+                <div style="font-size: 2.5rem;">🥗</div>
+                <h3>Science Feeding</h3>
+                <p>We use data-driven nutrition plans to help stray animals recover their strength faster.</p>
+            </div>
+            <div class="feature-card">
+                <div style="font-size: 2.5rem;">🏠</div>
+                <h3>Sweet Home</h3>
+                <p>Our rigorous adoption process ensures every pet finds their perfect, lifelong match.</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -148,12 +226,16 @@
             </div>
             <div style="display: grid; gap: 30px;">
                 <div style="background: var(--grain-yellow); border-radius: 30px; padding: 35px;">
-                    <h4 style="margin:0; font-size:1.2rem;">Education Workshops</h4>
-                    <p style="margin-top:10px; color:#543;">Teaching the next generation about empathy.</p>
+                    <h4 style="margin:0; font-size:1.2rem;">Transforming Stray Lives Into Family Stories</h4>
+                    <p style="margin-top:10px; color:#543;">Every paw print tells a story of survival, hope, and the longing for a place to call home. 
+        Since 2021, SafePaw has been dedicated to rewriting the futures of city strays by providing 
+        them with professional medical care, a safe haven, and a scientific path to adoption. 
+        We believe that no animal should wander alone, and with your support, we can ensure 
+        every rescued friend finds the love and security they deserve.</p>
                 </div>
                 <div style="background: var(--safe-green); border-radius: 30px; padding: 35px; color: white;">
-                    <h4 style="margin:0; font-size:1.2rem;">TNR Program</h4>
-                    <p style="margin-top:10px; opacity:0.9;">Humane Trap-Neuter-Return for population control.</p>
+                    <h4 style="margin:0; font-size:1.2rem;">A Safe Haven for Every Homeless Soul</h4>
+                    <p style="margin-top:10px; opacity:0.9;">SafePaw is more than just a shelter; it is a community-driven platform built on the principles of compassion and scientific rescue. From emergency medical aid to behavioral rehabilitation, our team works tirelessly to prepare rescued animals for their forever homes. By joining us today, you are not just visiting a website—you are becoming part of a life-saving mission to end animal homelessness and build a more compassionate world for our furry companions.</p>
                 </div>
             </div>
         </div>
@@ -291,6 +373,15 @@
         options: { cutout: '65%', plugins: { legend: { position: 'bottom' } } }
     });
 </script>
+
+<section style="background: var(--deep-bg); color: white; padding: 60px 20px; text-align: center;">
+    <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Ready to make a difference?</h2>
+    <p style="margin-bottom: 30px; opacity: 0.8;">Your small contribution can provide a warm meal for a kitten today.</p>
+    <div style="display: flex; justify-content: center; gap: 15px;">
+        <a href="adopt.html" class="btn-donate-nav" style="background: #E9C46A; color: #333;">Adopt Now</a>
+        <a href="register.html" class="btn-donate-nav" style="border: 1px solid white; background: transparent;">Join Volunteer</a>
+    </div>
+</section>
 
 <footer style="padding: 40px; text-align: center; color: #888; background: #fff; border-top: 1px solid #eee;">
     <p>© 2026 SafePaw Non-Profit | Advocacy for the Voiceless.</p>

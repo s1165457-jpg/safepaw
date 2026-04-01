@@ -94,7 +94,37 @@
     .auth-footer { margin-top: 25px; color: #999; font-size: 0.95rem; }
     .auth-footer a { color: var(--sunset-coral); text-decoration: none; font-weight: 700; }
   </style>
+
 </head>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loginForm = document.querySelector('.auth-form');
+        
+        if (loginForm) {
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const email = this.querySelector('input[type="email"]').value;
+                const password = this.querySelector('input[type="password"]').value;
+
+                const savedPassword = localStorage.getItem(email);
+
+                if (savedPassword && savedPassword === password) {
+                    alert("Welcome back!");
+                    sessionStorage.setItem('isLoggedIn', 'true');
+                    sessionStorage.setItem('userName', email.split('@')[0]);
+                    window.location.href = "index.html"; 
+                } else {
+                    alert("Invalid email or password!");
+                }
+            });
+        }
+    });
+</script>
+
+
 <body>
 
 <header>

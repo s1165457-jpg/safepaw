@@ -1,0 +1,343 @@
+/* =========================================
+   SafePaw — Animal-Friendly Modern Theme (2026)
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --main-color: #F4A261;      /* 温暖的橙色 - 主色调 */
+  --accent-color: #E76F51;    /* 强调红橙色 */
+  --success-color: #2A9D8F;   /* 健康的青绿色 */
+  --bg-color: #FFFAF3;        /* 极浅的奶油暖色背景 */
+  --text-color: #333333;
+  --white: #ffffff;
+  --max-width: 1100px;
+  --shadow-lg: 0 20px 40px rgba(244, 162, 97, 0.15);
+  
+  /* 核心：告别死灰色！这是带微光的半透明暖白/奶油色 */
+  --glass-bg: rgba(255, 255, 255, 0.25); 
+}
+
+/* ---------- 基础重置 ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+  font-family: 'Poppins', sans-serif; 
+  color: var(--text-color); 
+  background: var(--bg-color); 
+  line-height: 1.6; 
+  scroll-behavior: smooth;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ---------- 导航栏 ---------- */
+header { 
+  background: rgba(255, 255, 255, 0.9); 
+  backdrop-filter: blur(10px); 
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+}
+
+nav { 
+  max-width: var(--max-width); 
+  margin: auto; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 1rem 2rem; 
+}
+
+.logo { font-size: 1.6rem; font-weight: 700; color: var(--accent-color); }
+
+.nav-links { display: flex; gap: 1.5rem; }
+
+.nav-links a { 
+  font-weight: 500; 
+  padding: 5px 0; 
+  transition: 0.3s; 
+  position: relative;
+}
+
+.nav-links a.active, .nav-links a:hover { color: var(--main-color); }
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; width: 0; height: 2px;
+  background: var(--main-color);
+  transition: 0.3s;
+}
+
+.nav-links a.active::after { width: 100%; }
+
+/* ---------- 彻底告别冷灰：全新的 Warm Glass Hero ---------- */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;    /* 垂直居中核心 */
+  justify-content: center; /* 水平居中核心 */
+  text-align: center;
+  padding: 2rem;
+  background-size: cover;
+  background-position: center;
+  /* 叠加一个半透明暖色层，让背景图和文字融合更好 */
+  background-image: linear-gradient(rgba(244, 162, 97, 0.05), rgba(0, 0, 0, 0.1)), 
+                    url('../images/adopt-bg.jpg'); /* 确保你 images 文件夹有这张背景图 */
+}
+
+/* 暖色调磨砂卡片容器 */
+.glass-container {
+  /* 1. 改变背景颜色：从灰色变为半透明的暖色渐变 */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 250, 243, 0.2));
+  
+  /* 2. 强力的磨砂模糊 */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  /* 3. 增加一个微光边框 */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  
+  padding: 3.5rem;
+  border-radius: 40px; /* 更圆润，更有亲和力 */
+  color: #ffffff;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: var(--shadow-lg);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.glass-container h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 减弱文字阴影，使其更自然 */
+}
+
+.glass-container p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+}
+
+/* ---------- 统计栏 (Stat Items) ---------- */
+.stat-group {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 2rem;
+}
+
+.stat-item h3 { font-size: 2rem; color: #fff; margin: 0; }
+.stat-item p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin: 0; opacity: 0.8; }
+
+/* ---------- 按钮优化 ---------- */
+.btn {
+  background: var(--main-color);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-block;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(244, 162, 97, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(231, 111, 81, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 0.9rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: var(--main-color);
+}
+
+/* ---------- 内容板块样式 ---------- */
+.section-inner {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 2rem;
+}
+
+h2 { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: var(--text-color); }
+
+/* ---------- 重点修改：两两对称的四步骤排版 ---------- */
+.support-grid.four-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 核心：强制分为两列 */
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+/* 适配手机端，在窄屏下变为一列 */
+@media (max-width: 768px) {
+  .support-grid.four-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+.support-item {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.4s;
+}
+
+.support-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.support-item .step-num {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+/* ---------- 动物卡片区域 ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.update-card {
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.4s;
+}
+
+.update-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.update-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.tag {
+  background: rgba(244, 162, 97, 0.1);
+  color: var(--main-color);
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+/* ---------- 动画 ---------- */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { opacity: 0; transform: translateY(30px); transition: 1s; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ---------- 页脚 ---------- */
+footer {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #fff;
+  margin-top: 4rem;
+  border-top: 1px solid #eee;
+  color: #888;
+}
+
+/* 登录后的用户状态 - 暖黄色版本 */
+.user-logged-in {
+    background: rgba(233, 196, 106, 0.15); /* 淡淡的琥珀色背景 */
+    color: #D4A017;                     /* 深琥珀色文字，确保清晰度 */
+    border: 1.5px solid #E9C46A;        /* 琥珀金边框 */
+    padding: 6px 18px;
+    border-radius: 50px;                /* 药丸形状 */
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(233, 196, 106, 0.1);
+}
+
+.user-logged-in:hover {
+    background: #E9C46A;                /* 悬浮时变成实心暖黄 */
+    color: white !important;             /* 文字变白 */
+    box-shadow: 0 5px 15px rgba(233, 196, 106, 0.3);
+    transform: translateY(-1px);
+}
+
+.user-logged-in::before {
+    content: "✨";                       /* 换成亮晶晶图标，呼应暖色调 */
+    font-size: 1rem;
+}
+
+/* 新增：居中文字介绍块 */
+.mission-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.mission-section h2 {
+    color: #E76F51;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.mission-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* 新增：三栏小贴士/特色 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 50px auto 0;
+}
+
+.feature-card {
+    padding: 30px;
+    background: var(--soft-cream);
+    border-radius: 20px;
+    border-bottom: 5px solid #E9C46A;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    color: var(--science-navy);
+}

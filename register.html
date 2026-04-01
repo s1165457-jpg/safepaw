@@ -93,7 +93,38 @@
     .auth-footer { margin-top: 25px; color: #999; font-size: 0.95rem; }
     .auth-footer a { color: var(--sunset-coral); text-decoration: none; font-weight: 700; }
   </style>
+
+  
 </head>
+
+<script>
+    // 使用 DOMContentLoaded 确保 HTML 加载完后再运行脚本
+    document.addEventListener('DOMContentLoaded', function() {
+        const regForm = document.querySelector('.auth-form');
+        
+        if (regForm) {
+            regForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const email = this.querySelector('input[type="email"]').value;
+                const password = this.querySelectorAll('input[type="password"]')[0].value;
+                const confirmPass = this.querySelectorAll('input[type="password"]')[1].value;
+
+                if (password !== confirmPass) {
+                    alert("Passwords do not match!");
+                    return;
+                }
+
+                // 注册逻辑：存入数据
+                localStorage.setItem(email, password);
+                alert("Account created successfully!");
+                window.location.href = "login.html"; 
+            });
+        }
+    });
+</script>
+
+
 <body>
 
 <header>
